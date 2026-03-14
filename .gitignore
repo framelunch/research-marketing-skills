@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# 一時ファイル（スクリプトの出力先）
+/tmp/
+
+# エディタ
+.idea/
+.vscode/
+*.swp
