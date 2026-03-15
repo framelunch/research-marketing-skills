@@ -22,10 +22,12 @@ research-marketing-skills/
 ├── SKILL.md           ← marketing strategy skill
 ├── scripts/
 │   ├── fetch_reddit.py   ← fetches from marketing subreddits
-│   └── fetch_hn.py       ← fetches from Hacker News
+│   ├── fetch_hn.py       ← fetches from Hacker News
+│   └── fetch_qiita.py    ← fetches from Qiita (Japan market)
 ├── references/
 │   ├── marketing-subreddits.md  ← subreddit guide
 │   ├── hn-search-guide.md       ← HN search strategy
+│   ├── qiita-search-guide.md    ← Qiita search strategy & Japan channels
 │   ├── report-template.md       ← full report template
 │   └── japanese-era.md          ← era conversion reference
 └── reports/
@@ -40,9 +42,14 @@ python scripts/fetch_reddit.py --year 2026 --output /tmp/reddit_raw.json
 
 # HN research
 python scripts/fetch_hn.py --year 2026 --output /tmp/hn_raw.json
+
+# Qiita research (Japan market)
+python scripts/fetch_qiita.py --year 2026 --output /tmp/qiita_raw.json
+# Optional: set QIITA_TOKEN env var to increase rate limit from 60 to 1000 req/hour
 ```
 
 ## Notes
 - This skill is local to this directory only
 - Reports use Japanese era format (令和8 = 2026, 令和7 = 2025, etc.)
-- Both scripts require no API keys — they use public APIs only
+- All scripts require no API keys — they use public APIs only
+- Qiita script optionally accepts `QIITA_TOKEN` env var for higher rate limits

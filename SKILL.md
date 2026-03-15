@@ -57,7 +57,7 @@ Create the directory before writing: `mkdir -p reports/{target_year}/{yyyy-mm-dd
 
 ## Step 3: Run Data Collection
 
-Run both scripts in parallel (or sequentially if needed). Use the target_year from Step 2.
+Run all three scripts in parallel (or sequentially if needed). Use the target_year from Step 2.
 
 ### Reddit Research
 ```bash
@@ -87,9 +87,24 @@ strategy discussions) using 20 targeted queries.
 For context on queries and how to interpret HN data, read:
 `references/hn-search-guide.md`
 
+### Qiita Research (Japan market)
+```bash
+python scripts/fetch_qiita.py \
+  --year {target_year} \
+  --min-likes 3 \
+  --output /tmp/qiita_raw.json
+```
+
+This searches Qiita for Japanese individual developer articles about app/game launches,
+monetization, and promotion strategies. Uses 16 targeted Japanese queries.
+No authentication required (60 req/hour limit applies).
+
+For context on queries and how to interpret Qiita data, read:
+`references/qiita-search-guide.md`
+
 ## Step 4: Analyze the Data
 
-Read both output files and extract insights relevant to the user's specific product.
+Read all three output files and extract insights relevant to the user's specific product.
 
 **From Reddit (`/tmp/reddit_raw.json`):**
 - `top_success_stories`: What worked for similar products? Look for patterns.
@@ -102,10 +117,21 @@ Read both output files and extract insights relevant to the user's specific prod
 - Show HN posts reveal what the HN community (tech-savvy early adopters) responds to
 - Look for revenue numbers, download benchmarks, channel effectiveness data
 
+**From Qiita (`/tmp/qiita_raw.json`):**
+- `top_success_stories`: Japanese developer launch reports with concrete data (downloads, revenue)
+- `top_pain_points`: Japan-specific discoverability and promotion struggles
+- Sort by `engagement_score` (likes + 3× comments); articles with 50+ likes are significant
+- Look for Japan-specific channels mentioned: X `#個人開発`, note, はてなブックマーク, AppBank等
+- Note: Qiita audience is developers — adjust for mainstream Japanese users accordingly
+
 **Synthesize for this specific product:**
 The raw data is broad; your job is to filter it for relevance. A marketing insight for a PC
 strategy game doesn't automatically apply to a productivity iOS app. Stay grounded in what
 the data says about the user's specific category, platform, and audience.
+
+**Global vs. Japan distinction:**
+Separate insights into (1) global/English-language strategies (Reddit + HN) and
+(2) Japan-specific strategies (Qiita). The report must present both tracks clearly.
 
 ## Step 5: Generate the Report
 
@@ -113,8 +139,8 @@ Read the full template from `references/report-template.md` before writing.
 
 The report structure has 6 sections:
 1. Product Overview
-2. Market Research Summary (Reddit + HN findings)
-3. Marketing Strategy Recommendations (5 scored sections)
+2. Market Research Summary (Reddit + HN + Qiita findings)
+3. Marketing Strategy Recommendations (5 scored sections, each with Japan-specific sub-section)
 4. Action Plan
 5. Key Risks & Mitigations
 6. Data Sources
@@ -137,6 +163,12 @@ For each section:
 - Provide a concrete table of options/benchmarks from the research data
 - Explain what the score means for this specific product
 - Include the scale definition so the user understands what each level means
+
+**Section 3.4 (Promotion Methods) MUST include two parallel tracks:**
+- **グローバル向け (Global):** Channels from Reddit/HN data (English-language)
+- **日本向け (Japan):** Channels from Qiita data (X `#個人開発`, note, はてブ, AppBank, etc.)
+
+Both tracks should have their own recommended promotion sequence (pre-launch / launch / post-launch).
 
 ### Writing Style
 - Concrete and specific, not generic ("post on social media" is useless; "post weekly dev
@@ -170,12 +202,15 @@ Then display the full report content so the user can read it immediately.
 |------|-------------|
 | `references/marketing-subreddits.md` | Understanding subreddit categories and what to look for |
 | `references/hn-search-guide.md` | Interpreting HN data and query strategy |
+| `references/qiita-search-guide.md` | Interpreting Qiita data and Japan-specific channels |
 | `references/report-template.md` | Full report template — read before generating report |
 
 ## Notes on Data Quality
 
 - Reddit's public API returns top ~1000 posts; older years (3+ years back) may have gaps
 - HN data is English-centric; Japanese market insights will be limited
-- Both sources skew toward technically sophisticated audiences — adjust recommendations
+- Both Reddit and HN skew toward technically sophisticated audiences — adjust recommendations
   accordingly if the target audience is mainstream/casual
-- If scripts fail due to network issues, note this in the report and proceed with partial data
+- Qiita data is Japan/developer-centric; supplement with Reddit/HN for global strategies
+- Qiita unauthenticated API allows 60 req/hour — if rate-limited, set `QIITA_TOKEN` env var
+- If any script fails due to network issues, note this in the report and proceed with partial data

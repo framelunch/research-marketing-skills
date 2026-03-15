@@ -10,7 +10,7 @@ Use this template when generating the final report. Save to:
 
 **Research Date:** {YYYY-MM-DD}
 **Target Research Period:** {Year}
-**Data Sources:** Reddit ({N} subreddits), Hacker News ({N} queries)
+**Data Sources:** Reddit ({N} subreddits), Hacker News ({N} queries), Qiita ({N} queries)
 
 ---
 
@@ -66,7 +66,33 @@ Use this template when generating the final report. Save to:
 - {Pattern 2}
 - {Pattern 3}
 
-### 2.3 Competitive Landscape
+### 2.3 Qiita Findings (Japan Developer Community)
+
+**Top Success Stories (個人開発 launch reports from Qiita)**
+
+| # | Title | Likes | Key Insight |
+|---|-------|-------|-------------|
+| 1 | {title} | {likes} | {1-line insight} |
+| 2 | ... | | |
+| 3 | ... | | |
+
+**Top Pain Points (Japan-specific)**
+
+| # | Pain Point | Likes | Frequency |
+|---|-----------|-------|-----------|
+| 1 | {pain point} | {likes} | High/Med/Low |
+| ... | | | |
+
+**Key Patterns from Qiita:**
+- {Pattern 1: e.g., "X の #個人開発 タグが最も有効な集客チャネルとして挙げられることが多い"}
+- {Pattern 2}
+- {Pattern 3}
+
+**Japan-Specific Channels Mentioned:**
+- {Channel 1: e.g., "note での開発日記が非技術者ユーザーへのリーチに有効"}
+- {Channel 2}
+
+### 2.4 Competitive Landscape
 
 Based on research data, products similar to **{Product Name}**:
 
@@ -158,6 +184,10 @@ Based on research data, products similar to **{Product Name}**:
 
 **Suitability: ★★★☆☆ (3/5)**
 
+---
+
+#### 🌐 グローバル向けプロモーション (Global — from Reddit/HN data)
+
 | Method | Cost | Effort | Expected Impact |
 |--------|------|--------|----------------|
 | Reddit self-promotion (r/IndieDev, r/SideProject) | Free | Low | Medium |
@@ -170,12 +200,45 @@ Based on research data, products similar to **{Product Name}**:
 | Paid ads (Meta, Google UAC) | Paid | Medium | Varies |
 | App Store feature submission | Free | Low | Very High (if selected) |
 
-**Recommended Promotion Sequence:**
+**Global Promotion Sequence:**
 1. **Pre-launch (4-6 weeks):** {specific actions}
 2. **Launch week:** {specific actions}
 3. **Post-launch (month 1-3):** {specific actions}
 
-**Key Insight from Research:** {most important finding from data about what actually works}
+**Key Insight from Reddit/HN:** {most important finding from global data}
+
+---
+
+#### 🇯🇵 日本向けプロモーション (Japan — from Qiita data)
+
+| Method | Cost | Effort | Expected Impact |
+|--------|------|--------|----------------|
+| X (Twitter) `#個人開発` タグ付き開発日記 | Free | Medium | High |
+| Qiita に開発記事・リリース記事を投稿 | Free | Medium | Medium (dev audience) |
+| note に開発ストーリー記事を投稿 | Free | Medium | Medium (general audience) |
+| はてなブックマーク 経由のバイラル | Free | Low | High (if bookmarked) |
+| Zenn に技術記事を投稿 | Free | Medium | Low-Medium |
+| AppBank / iPhoneアプリまとめ にプレスリリース送付 | Free | Low | High (if featured) |
+| 4Gamer / ファミ通 にプレスリリース送付 (ゲームの場合) | Free | Low | High (if featured) |
+| App Store フィーチャー申請 (日本ストアチーム宛) | Free | Low | Very High (if selected) |
+| YouTube / ニコニコ動画 でプレイ動画・紹介動画 | Free | High | Medium-High |
+| Discord 日本語コミュニティへの参加 | Free | Medium | Medium |
+| 有料広告 (Meta Japan, Google UAC) | Paid | Medium | Varies |
+
+**日本向けプロモーションシーケンス:**
+1. **リリース前 (4〜6週間前):** {specific actions in Japanese context — e.g., X で #個人開発 タグで開発日記を開始}
+2. **リリース週:** {specific actions — e.g., Qiita・note でリリース記事を投稿、AppBank にプレスリリース送付}
+3. **リリース後 (1〜3ヶ月):** {specific actions — e.g., ユーザーレビューへの返信、X での継続的な発信}
+
+**日本市場の重要インサイト (Qiita調査より):** {most important finding from Qiita data about Japan-specific promotion}
+
+**日本市場の注意点:**
+- App Store Japan は世界第2位の売上規模 — 高いポテンシャルだが競合も激しい
+- X の `#個人開発` タグは日本独自の強力なコミュニティ — リリース前から継続発信が重要
+- はてなブックマーク での拡散は非技術者層へのリーチに有効
+- 日本語ローカライズの品質 (UI文言・価格表示・日付形式) がコンバージョンに直結
+
+---
 
 **Score Breakdown:**
 - 1/5: No viable promotion channel; product/market mismatch
