@@ -319,6 +319,7 @@ This measures how well the marketing strategy works for a solo developer or smal
 
 - **Reddit:** Searched {N} subreddits, {N} posts analyzed ({date})
 - **Hacker News:** {N} queries, {N} posts analyzed ({date})
-- **Scripts:** `scripts/fetch_reddit.py`, `scripts/fetch_hn.py`
-- **Raw Data:** `/tmp/reddit_raw.json`, `/tmp/hn_raw.json`
+- **Qiita:** {N} queries, {N} articles analyzed ({date})
+- **Scripts:** `scripts/fetch_reddit.py`, `scripts/fetch_hn.py`, `scripts/fetch_qiita.py`
+- **Raw Data:** `/tmp/reddit_raw.json`, `/tmp/hn_raw.json`, `/tmp/qiita_raw.json`
 ```

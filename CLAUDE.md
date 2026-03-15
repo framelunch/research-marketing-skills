@@ -12,7 +12,7 @@ for any app, game, or digital product in this directory. The skill:
 1. Asks the user (in Japanese) what product they want to market
 2. Runs Reddit and HN research scripts to gather real community data
 3. Generates a comprehensive marketing strategy report with 5 scored categories
-4. Saves the report to `reports/{japanese_era}/{date}/{time}.md`
+4. Saves the report to `reports/{year}/{date}/{time}.md`
 
 ## Directory Structure
 
@@ -50,6 +50,6 @@ python scripts/fetch_qiita.py --year 2026 --output /tmp/qiita_raw.json
 
 ## Notes
 - This skill is local to this directory only
-- Reports use Japanese era format (令和8 = 2026, 令和7 = 2025, etc.)
+- Reports use Western calendar year format (e.g., 2026, 2025)
 - All scripts require no API keys — they use public APIs only
 - Qiita script optionally accepts `QIITA_TOKEN` env var for higher rate limits

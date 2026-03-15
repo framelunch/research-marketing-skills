@@ -196,6 +196,37 @@ After saving, tell the user in Japanese:
 
 Then display the full report content so the user can read it immediately.
 
+## Step 7: Review for Improvements and Bugs
+
+After completing the report, review the skill itself for issues. Check the following:
+
+**Scripts (`scripts/`):**
+- Did any script fail or return 0 results unexpectedly? If so, note the cause.
+- Are there discrepancies between the script's output JSON keys and what this SKILL.md describes?
+- Did rate limiting occur? If so, suggest adding `QIITA_TOKEN` or reducing `--limit`.
+
+**SKILL.md (this file):**
+- Are there any contradictions between steps (e.g., output paths, key names)?
+- Are all referenced files in `references/` actually present on disk?
+
+**`references/report-template.md`:**
+- Does the template reflect all three data sources (Reddit, HN, Qiita)?
+
+**`CLAUDE.md`:**
+- Is the directory structure diagram consistent with the actual files and paths used?
+
+If any issues are found, fix them immediately (edit files, create missing files, etc.) and tell the user in Japanese what was fixed:
+
+```
+スキルの改善点・バグを確認しました：
+
+- [問題1]: [対応内容]
+- [問題2]: [対応内容]
+（問題がなければ「改善点・バグは見つかりませんでした」と報告）
+```
+
+If there are no issues, still report that explicitly so the user knows the review was done.
+
 ## Reference Files
 
 | File | When to Read |
@@ -204,6 +235,7 @@ Then display the full report content so the user can read it immediately.
 | `references/hn-search-guide.md` | Interpreting HN data and query strategy |
 | `references/qiita-search-guide.md` | Interpreting Qiita data and Japan-specific channels |
 | `references/report-template.md` | Full report template — read before generating report |
+| `references/japanese-era.md` | Era conversion table for report directory naming (令和N = year - 2018) |
 
 ## Notes on Data Quality
 
