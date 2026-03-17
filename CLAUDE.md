@@ -25,11 +25,13 @@ research-marketing-skills/
 │   ├── fetch_hn.py       ← fetches from Hacker News
 │   └── fetch_qiita.py    ← fetches from Qiita (Japan market)
 ├── references/
-│   ├── marketing-subreddits.md  ← subreddit guide
-│   ├── hn-search-guide.md       ← HN search strategy
-│   ├── qiita-search-guide.md    ← Qiita search strategy & Japan channels
-│   ├── report-template.md       ← full report template
-│   └── japanese-era.md          ← era conversion reference
+│   ├── marketing-subreddits.md      ← subreddit guide
+│   ├── hn-search-guide.md           ← HN search strategy
+│   ├── qiita-search-guide.md        ← Qiita search strategy & Japan channels
+│   ├── data-analysis-criteria.md    ← engagement thresholds & relevance filters
+│   ├── report-template.md           ← full report template
+│   ├── report-scoring-criteria.md   ← scoring criteria & writing guidelines
+│   └── japanese-era.md              ← era conversion reference
 └── reports/
     └── {year}/{date}/{time}.md   ← generated reports
 ```
